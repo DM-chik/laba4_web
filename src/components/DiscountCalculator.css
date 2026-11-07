@@ -1,0 +1,378 @@
+/* --- Карточки-панели --- */
+.panel {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+}
+
+.panel__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.panel__title {
+    margin: 0 0 16px;
+    font-size: 18px;
+    color: #101828;
+}
+
+.panel__head .panel__title {
+    margin-bottom: 16px;
+}
+
+/* --- Список товаров --- */
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: start;
+    gap: 14px;
+    padding: 14px;
+    background: #f9fafb;
+    border: 1px solid #eaecf0;
+    border-radius: 12px;
+}
+
+.item__remove {
+    align-self: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    background: #fee4e2;
+    color: #d92d20;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.item__remove:hover:not(:disabled) {
+    background: #fecdca;
+}
+
+.item__remove:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* --- Поля --- */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field__label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #344054;
+}
+
+.field__input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 2px solid #d0d5dd;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #1d2939;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field__input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.field__input--error {
+    border-color: #ef4444;
+    background: #fef2f2;
+}
+
+.field__input--error:focus {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.field__error {
+    font-size: 12px;
+    color: #ef4444;
+}
+
+.field__select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4l3 3 3-3' stroke='%23666' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+}
+
+/* --- Опции --- */
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 28px;
+    margin-bottom: 20px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #344054;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox input {
+    width: 16px;
+    height: 16px;
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+.slider {
+    flex: 1 1 240px;
+    min-width: 220px;
+    transition: opacity 0.2s;
+}
+
+.slider--disabled {
+    opacity: 0.45;
+}
+
+.slider__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #344054;
+}
+
+.slider__value {
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.slider input[type="range"] {
+    width: 100%;
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+/* --- Промокод --- */
+.promo__row {
+    display: flex;
+    gap: 10px;
+}
+
+.promo__row .field__input {
+    flex: 1;
+}
+
+.promo__applied {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #067647;
+}
+
+.promo__remove {
+    border: none;
+    background: none;
+    color: #2563eb;
+    font-size: 13px;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* --- Кнопки --- */
+.btn {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.btn--primary {
+    flex: 1;
+    padding: 13px;
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.btn--primary:hover {
+    background: #1d4ed8;
+}
+
+.btn--secondary {
+    flex: 1;
+    padding: 13px;
+    background: #f2f4f7;
+    color: #344054;
+}
+
+.btn--secondary:hover {
+    background: #e4e7ec;
+}
+
+.btn--ghost {
+    background: #eff4ff;
+    color: #2563eb;
+    padding: 8px 14px;
+    font-size: 14px;
+}
+
+.btn--ghost:hover {
+    background: #dbe7fe;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* --- Результаты --- */
+.results {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+}
+
+.results__title {
+    margin: 0 0 12px;
+    font-size: 18px;
+    color: #101828;
+}
+
+.results__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.results__table td {
+    padding: 10px 0;
+    border-bottom: 1px solid #f2f4f7;
+    vertical-align: top;
+}
+
+.results__table td:first-child {
+    color: #667085;
+    padding-right: 16px;
+}
+
+.results__row--item td {
+    font-size: 14px;
+}
+
+.results__value {
+    text-align: right;
+    font-weight: 600;
+    color: #101828;
+    white-space: nowrap;
+}
+
+.results__value--discount {
+    color: #ef4444;
+}
+
+.results__row--total td {
+    padding-top: 16px;
+    border-top: 2px solid #101828;
+    border-bottom: none;
+    font-size: 17px;
+}
+
+.results__row--total td:first-child {
+    color: #101828;
+    font-weight: 700;
+}
+
+.results__row--total .results__value {
+    font-size: 20px;
+    color: #2563eb;
+}
+
+/* --- История --- */
+.history {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+}
+
+.history__title {
+    margin: 0 0 12px;
+    font-size: 16px;
+    color: #101828;
+}
+
+.history__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.history__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f2f4f7;
+    font-size: 14px;
+    color: #475467;
+}
+
+.history__item:last-child {
+    border-bottom: none;
+}
+
+.history__item strong {
+    color: #101828;
+    white-space: nowrap;
+}
+
+/* --- Адаптив --- */
+@media (max-width: 640px) {
+    .item {
+        grid-template-columns: 1fr;
+    }
+
+    .item__remove {
+        justify-self: end;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .promo__row {
+        flex-direction: column;
+    }
+}
